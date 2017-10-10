@@ -4,8 +4,6 @@ dist: trusty
 jdk: oraclejdk8
 addons:
   apt:
-    packages:
-      - oracle-java8-installer
-before_install:
-  - chmod +x mvnw
+    packages: oracle-java8-installer
+before_install: chmod +x mvnw
   script: HEROKU_API_KEY="$HEROKU_API_KEY" mvn clean verify -P heroku
